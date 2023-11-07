@@ -36,11 +36,11 @@ export to-rad = (* Math.PI) >> (/ 180.0deg)
 
 export to-deg = (* 180.0deg) >> (/ Math.PI)
 
-export dsin = to-deg >> Math.sin
+export dsin = to-rad >> Math.sin
 
-export dcos = to-deg >> Math.cos
+export dcos = to-rad >> Math.cos
 
-export dtan = to-deg >> Math.tan
+export dtan = to-rad >> Math.tan
 
 export dcsc = to-deg >> (1 /) >> Math.sin
 
@@ -224,8 +224,12 @@ export recip = (1 /)
 
 export say = console.log
 
-export π = Math.pi
+export π = Math.PI
 
-export λ = (f) -> (...args) -> f ...args
+export linear-charge = (Δq, Δl) --> Δq / Δl
+
+export λ = linear-charge
 
 export τ = (*) 2 π
+
+export hyp = (a, b) --> sqrt((parse-float(a)^2) + (parse-float(b)^2))
